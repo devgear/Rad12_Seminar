@@ -1,0 +1,13 @@
+begin
+  TJsonMapper<MyPerson>.SetDefaultLibrary( 'System.JSON.Serializers' );
+  var myJobj := MyPerson.FromJSON( Memo3.Text );
+
+  try
+    Memo2.Lines.Add( myJobj.person.ID );
+    Memo2.Lines.Add( myJobj.person.Add.PNo.ToString );
+    Memo2.Lines.Add( myJobj.person.Add.Detail );
+    Memo2.Lines.Add( myJobj.Dept.DName );
+  finally
+    myJobj.Free;
+  end;
+end;

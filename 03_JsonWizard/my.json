@@ -1,0 +1,20 @@
+[
+          {
+            "seq": "1",
+            "mac": "80:EA:CA:00:02:50",
+            "serial": "BK1A01A00A00173",
+            "channel": "개발"
+          },
+          {
+            "seq": "2",
+            "mac": "80:EA:CA:00:02:50",
+            "serial": "BK1A01A00A00173",
+            "channel": "개발"
+          },
+          {
+            "seq": "3",
+            "mac": "80:EA:CA:00:02:50",
+            "serial": "BK1A01A00A00173",
+            "channel": "개발"
+          }
+]

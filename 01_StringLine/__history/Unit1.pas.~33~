@@ -1,0 +1,105 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  strMy : string;
+  sList :  TStringList;
+  I: Integer;
+begin
+  sList := TStringList.Create;
+
+  // 멀티라인 string 은 작은따옴표 3개로 앞뒤로 묵고, 따옴표 줄에는 아무것도 입력하지 않는다.
+  strMy := '''
+           12345
+           6789
+           ''';
+  sList.Add( strMy );
+
+  {$TEXTBLOCK CR}
+  strMy := '''
+           12345
+           6789
+           ''';
+  sList.Add( strMy );
+
+  {$TEXTBLOCK LF}
+  strMy := '''
+           123
+           678
+           9
+           ''';
+  sList.Add( strMy );
+
+  {$TEXTBLOCK CRLF}
+  strMy := '''
+           12345
+           6789
+           ''';
+  sList.Add( strMy );
+
+  // 따옴표 ''' 3개 를 문자로 넣을때
+  strMy := '''''
+            select * from table1  '''
+            where id > 100
+            order by email ;
+            ''''';
+  sList.Add( strMy );
+
+
+ {$TEXTBLOCK NATIVE JSON}
+  strMy := '''
+      {
+        "Count": 2,
+        "Items": [
+          {
+            "seq": "1",
+            "mac": "80:EA:CA:00:02:8A",
+            "num": "000-000000-00-001",
+            "serial": "BK1A01A00A00765",
+            "channel": "영업"
+          },
+          {
+            "seq": "2",
+            "mac": "80:EA:CA:00:02:50",
+            "num": "000-000000-00-002",
+            "serial": "BK1A01A00A00173",
+            "channel": "개발"
+          },
+      }
+      ''';
+  sList.Add( strMy );
+
+  for I := 0 to sList.Count - 1 do
+  begin
+    Memo1.Lines.Add( sList[i] );
+    Memo1.Lines.Add( 'len=' +  sList[i].Length.ToString );
+    Memo1.Lines.Add('-------------');
+  end;
+
+end;
+
+end.

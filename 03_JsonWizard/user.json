@@ -1,0 +1,16 @@
+{
+  "person" : {
+     "ID" : "id1234",
+     "Hp" : "010-5555-6666",
+     "Add" : {
+        "City" : "Seoul",
+        "PNo" : "1234",
+        "Detail" : "K-Building 123"
+       }
+   },
+
+   "Dept" : {
+     "Did" : "did_abcd",
+     "DName" : "System Dev"
+   } 
+}
